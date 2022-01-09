@@ -27,14 +27,15 @@ The wrapper script will run the `kotlin_language_server` in a `nix-shell` **with
 
 ```console
 # Path to shell-for-building.nix:
-SHNIX=/home/rs/code/github.com/renerocksai/kotlin_language_server/shell-for-building.nix
+# (depends on where you checked out this repo)
+SHNIX=/home/rs/code/github.com/renerocksai/kotlin_language_server.nixos/shell-for-building.nix
 
-# example destination, where you checked out this repo
+# example destination in this repo
 # the ./bin and ./lib dirs will be copied into $DESTINATION
-DESTINATION=/home/rs/code/github.com/renerocksai/kotlin_language_server
+DESTINATION=/home/rs/code/github.com/renerocksai/kotlin_language_server.nixos
 
-# git clone the language server:
-cd ~/code/github.com
+# git clone the language server: to ~/code/github.com/fwcd/kotlin-language-server
+cd ~/code/github.com && mkdir fwcd
 git clone https://github.com/fwcd/kotlin-language-server.git
 cd kotlin_language_server
 
