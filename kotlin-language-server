@@ -1,0 +1,7 @@
+#!/usr/bin/env nix-shell
+#!nix-shell -i bash -p jdk11
+java -version
+readonly BIN_DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly CMD="bin/kotlin-language-server"
+
+"${BIN_DIR}"/"${CMD}" "$@"
