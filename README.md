@@ -27,7 +27,7 @@ Here is how I configure it in neovim with my custom `on_attach` function and `ca
 
 ```lua
 require'lspconfig'.kotlin_language_server.setup{
-cmd = {'/home/rs/code/github.com/renerocksai/kotlin_language_server/kotlin-language-server'},
+    cmd = {'/home/rs/code/github.com/renerocksai/kotlin_language_server/kotlin-language-server'},
     on_attach = on_attach,
     capabilities = capabilities,
     flags = {
