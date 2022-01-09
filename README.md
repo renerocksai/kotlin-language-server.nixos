@@ -23,6 +23,19 @@ The reasons I've packaged it up and put it here are:
 
 The wrapper script will run the `kotlin_language_server` in a `nix-shell` **with JDK11** installed.
 
+Here is how I configure it in neovim with my custom `on_attach` function and `capabilities`, using `lspconfig`:
+
+```lua
+require'lspconfig'.kotlin_language_server.setup{
+cmd = {'/home/rs/code/github.com/renerocksai/kotlin_language_server/kotlin-language-server'},
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = {
+      debounce_text_changes = 150,
+    }
+}
+```
+
 ## Packaging it yourself
 
 ```console
