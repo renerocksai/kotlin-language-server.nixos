@@ -1,6 +1,13 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i bash -p jdk11
+#!nix-shell -i bash -p jdk17
 java -version
+
+# fix JAVA_HOME
+
+j=$(which java)
+export JAVA_HOME=$(echo $j | sed 's/\/bin\/java//')
+echo NEW JAVA_HOME $JAVA_HOME
+
 readonly BIN_DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly CMD="bin/kotlin-language-server"
 
